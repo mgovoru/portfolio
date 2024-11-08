@@ -1,0 +1,85 @@
+@import "./../../global.scss";
+
+
+.common {
+	font-family: Montserrat;
+	width: 100%;
+}
+
+.black {
+	background: black;
+	height: 35px;
+}
+
+.white {
+	background: white;
+	height: 75px;
+	border: 1px solid black;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 16px;
+}
+
+.logo {
+	color: rgb(0, 0, 0);
+	@include responsive-font(16, 37, 320, 1920);
+	font-weight: 700;
+	line-height: 41.58px;
+	letter-spacing: 0px;
+}
+
+.items {
+	display: flex;
+	gap: 24px;
+	align-items: center;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.item {
+	color: black;
+	font-weight: 500;
+	padding: 10px 20px;
+	@include responsive-font(16, 30, 320, 1920);
+	cursor: pointer;
+	position: relative;
+	transition: color 0.3s ease;
+
+}
+
+.item::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	height: 1px;
+	width: 0;
+	background-color: black;
+	transition: width 0.3s ease, left 0.3s ease;
+}
+
+.item:hover {
+	color: #444;
+}
+
+.item:hover::before {
+	width: 100%;
+	left: 0;
+}
+
+.light path {
+	fill: black;
+	transition: fill 0.3s ease;
+}
+
+.light path:hover {
+	fill: rgb(250, 222, 109);
+}
