@@ -6,3 +6,13 @@
 		calc(#{$minFontSize * 1px} + (#{$maxFontSize} - #{$minFontSize}) * (100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})),
 		#{$maxFontSize}px);
 }
+
+.main {
+	width: 100%;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	height: 100%;
+}

@@ -4,6 +4,8 @@
 .common {
 	font-family: Montserrat;
 	width: 100%;
+	position: relative;
+	z-index:100;
 }
 
 .black {
@@ -25,6 +27,12 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 16px;
+	gap: 24px;
+	position: relative;
+
+	@media(max-width:700px) {
+		justify-content: flex-end;
+	}
 }
 
 .logo {
@@ -35,19 +43,55 @@
 	letter-spacing: 0px;
 }
 
-.items {
+.burger {
+	display: none;
+}
+
+.menu {
+	list-style: none;
 	display: flex;
+	margin: 0;
+	padding: 0;
 	gap: 24px;
-	align-items: center;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	position: relative;
+	right: 50%;
+	transform: translateX(50%);
+}
+
+@media(max-width:700px) {
+	.burger {
+		display: block;
+		background: none;
+		border: none;
+		color: black;
+		font-size: 42px;
+		cursor: pointer;
+	}
+
+	.menu {
+		list-style: none;
+		display: none;
+		margin: 0;
+		padding: 20px;
+		gap: 24px;
+		position: absolute;
+		width: 145px;
+		right:0;
+		top: 105%;
+		transform: translateX(-50%);
+		background-color: rgb(234, 233, 233);
+		z-index: 100;
+	}
+
+	.menu.open {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .item {
 	color: black;
 	font-weight: 500;
-	padding: 10px 20px;
 	@include responsive-font(16, 30, 320, 1920);
 	cursor: pointer;
 	position: relative;

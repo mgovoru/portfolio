@@ -20,19 +20,20 @@ export default function Header() {
         <div className={styles.container}>
           <div className={styles.logo}>
             {' '}
-            <Link href='/'>
-              MGovorukhina
-            </Link>
+            <Link href='/'>MGovorukhina</Link>
           </div>
-          <ul className={styles.items}>
-            {menuItems.map((item) => (
-              <li key={item.id} className={styles.item}>
-                <Link href={item.url}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <nav>
+            <button className={styles.burger} onClick={toggleMenu}>
+              &#9776;
+            </button>
+            <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+              {menuItems.map((item) => (
+                <li key={item.id} className={styles.item}>
+                  <Link href={item.url}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <svg
             className={styles.light}
             width={41}

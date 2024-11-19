@@ -1,7 +1,8 @@
 'use client'
-import styles from 'page.module.scss';
+import styles from './page.module.scss';
 
 export default function Custom404() {
+  
   return (
     <>
       <div className={styles.container}>
