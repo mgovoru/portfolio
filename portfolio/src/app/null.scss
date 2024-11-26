@@ -39,12 +39,12 @@ ol {
 /* Set core body defaults */
 
 html {
-	height: 100vh;
+	height: 100%;
 	line-height: 1.5;
 	width: 100vw;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow: auto;
 }
 
 body {

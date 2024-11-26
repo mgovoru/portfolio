@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PuzzlePiece from './PuzzlePiece';
-import { PuzzlePieceProps } from './../types';
-import { PieceShape } from './../types';
+import { PuzzlePieceProps } from './../../types';
+import { PieceShape } from './../../types';
 import { gsap } from 'gsap';
 import styles from './canvas.module.scss';
 
@@ -11,6 +11,7 @@ const PuzzleCanvas: React.FC = () => {
     { width: 0, height: 0 }
   );
   const textRef = useRef(null);
+  const subtextRef = useRef(null);
   const text = `FRONTEND - DEVELOPER`;
   const canvasRef = useRef(null);
 
@@ -239,6 +240,9 @@ const PuzzleCanvas: React.FC = () => {
     spans.forEach((span) => {
       tl.to(span, { opacity: 1, duration: 0.1, ease: 'none' });
     });
+     if (subtextRef.current) {
+       tl.to(subtextRef.current, { opacity: 1, duration: 0.1, ease: 'none' });
+     }
   }, []);
 
   return (
@@ -260,6 +264,9 @@ const PuzzleCanvas: React.FC = () => {
         />
       ))}
       <div ref={textRef} className={styles.title} />
+      <div ref={subtextRef} className={styles.subtitle}>
+        Мария Говорухина
+      </div>
     </div>
   );
 };

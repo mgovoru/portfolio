@@ -11,3 +11,16 @@
 	left: 14%;
 	transform: translateY(-30%);
 }
+
+.subtitle {
+	font-family: Montserrat;
+	@include responsive-font(16, 36, 320, 1920);
+	font-weight: 700;
+	line-height: 56px;
+	letter-spacing: 10px;
+	position: absolute;
+	top: 40%;
+	left: 14%;
+	transform: translateY(-30%);
+	opacity: 0;
+}

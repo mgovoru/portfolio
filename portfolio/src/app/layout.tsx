@@ -6,43 +6,47 @@ import Header from './components/layout/Header';
 
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useState, useEffect } from 'react';
-
-import styles from './page.module.scss';
-
-gsap.registerPlugin(useGSAP);
-
+import { useState, useEffect, useContext, useMemo } from 'react';
 import { register } from 'swiper/element/bundle';
-
-register();
+import { MyContext, MyContextProvider, MyContextType } from '@/app/context';
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [mainHeight, setMainHeight] = useState('100vh');
+  const [mainHeight, setMainHeight] = useState('100%');
   useEffect(() => {
-    function updateHeight() {
-      const header = document.querySelector('header');
-      if (header) {
-        const headerHeight = header.offsetHeight;
-        setMainHeight(`calc(100vh - ${headerHeight}px)`);
-      }
-    }
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
+    gsap.registerPlugin(useGSAP);
+    register();
+
+    // function updateHeight() {
+    //   const header = document.querySelector('header');
+    //   if (header) {
+    //     const headerHeight = header.offsetHeight;
+    //     setMainHeight(`calc(100% - ${headerHeight}px)`);
+    //   }
+    // }
+    // updateHeight();
+    // window.addEventListener('resize', updateHeight);
+    // return () => window.removeEventListener('resize', updateHeight);
   }, []);
 
   return (
-    <html lang='en'>
-      <body>
-        <Header />
-        <main className={styles.main} style={{ height: mainHeight }}>
-          {children}
-        </main>
-      </body>
-    </html>
+    <MyContextProvider>
+      <html lang='en'>
+        <body>
+          <Header />
+          <main
+            className='main'
+            style={{
+              height: mainHeight,
+            }}
+          >
+            {children}
+          </main>
+        </body>
+      </html>
+    </MyContextProvider>
   );
 }

@@ -39,10 +39,10 @@ export default function Card(props: dataProps) {
       let gX = (1 - x / (halfWidth * 2)) * 100;
       let gY = (1 - y / (halfHeight * 2)) * 100;
 
-      const glare = item.querySelector('.glare') as HTMLDivElement;
-      if (glare) {
-        glare.style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
-      }
+      // const glare = item.querySelector('.glare') as HTMLDivElement;
+      // if (glare) {
+      //   glare.style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
+      // }
 
       parent.style.perspective = `${halfWidth * 6}px`;
       item.style.perspective = `${halfWidth * 6}px`;
@@ -63,7 +63,7 @@ export default function Card(props: dataProps) {
 
       let calcShadowX = (x - halfWidth) / 3;
       let calcShadowY = (y - halfHeight) / 6;
-      item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
+      // item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
     },
     []
   );
@@ -91,7 +91,7 @@ export default function Card(props: dataProps) {
       card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
       backface.style.transform =
         'rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)';
-      card.style.filter = `drop-shadow(0 10px 15px rgb(0, 0, 0, 0.3))`;
+      // card.style.filter = `drop-shadow(0 10px 15px rgb(0, 0, 0, 0.3))`;
     }
   };
 
@@ -118,15 +118,17 @@ export default function Card(props: dataProps) {
       </div>
       <div className='inner-card'>
         <div className='front-content'>
-          <div
-            className='front-image'
-            style={{
-              backgroundImage: `url(${props.url})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            }}
-          />
+          <a href={props.mainUrl} className='card__link'>
+            <div
+              className='front-image'
+              style={{
+                backgroundImage: `url(${props.url})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              }}
+            />
+          </a>
           <p className='title'>{props.title}</p>
           <p className='card__text'>{props.text}</p>
           <button className='flip' onClick={handleFlip}>

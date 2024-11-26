@@ -24,6 +24,7 @@ export interface CardProps {
   text: string;
 }
 export interface dataProps {
+  mainUrl: string;
   url: string;
   title: string;
   text: string;
