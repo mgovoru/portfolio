@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import Card from '../components/common/Card/Card';
 import styles from './page.module.scss';
 import React from 'react';

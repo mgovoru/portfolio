@@ -78,7 +78,6 @@
 .inner-card {
 	width: 100%;
 	height: 100%;
-	// background: white;
 }
 
 .blastoise .inner-card-backface .image {
@@ -100,9 +99,6 @@
 
 .card.blastoise .inner-card {
 	background-color: rgb(246, 246, 246);
-	// background-image: url(../../../public/city.jpg);
-	// background-position: center;
-	// background-size: contain;
 }
 
 .card .glare {
@@ -118,7 +114,6 @@
 	border-radius: 14px;
 	z-index: 9999;
 	mix-blend-mode: hard-light;
-	// background: radial-gradient(circle at 50% 50%, rgb(199 198 243), transparent);
 }
 
 .card .inner-card {
@@ -142,7 +137,6 @@
 	transform: rotateX(0deg) rotateY(0deg) scale(1);
 	top: 0;
 	height: 100%;
-	// filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
 	font-weight: 500;
 	perspective-origin: 0 0;
 	letter-spacing: 0;

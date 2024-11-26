@@ -13,11 +13,8 @@ const PuzzleCanvas: React.FC = () => {
   const textRef = useRef(null);
   const subtextRef = useRef(null);
   const text = `FRONTEND - DEVELOPER`;
-  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current as unknown as HTMLCanvasElement;
-    const pieceCtx = canvas?.getContext('2d');
     const bufferCanvas = document.createElement('canvas');
     const bufferCtx = bufferCanvas.getContext('2d') as CanvasRenderingContext2D;
 
@@ -34,8 +31,6 @@ const PuzzleCanvas: React.FC = () => {
       const screenHeight = window.innerHeight - headerHeight;
 
       // Масштабируем изображение, чтобы оно соответствовало размерам экрана
-      // bufferCanvas.width = screenWidth;
-      // img.height = screenHeight;
       bufferCanvas.width = screenWidth;
       bufferCanvas.height = screenHeight;
 
@@ -243,7 +238,7 @@ const PuzzleCanvas: React.FC = () => {
      if (subtextRef.current) {
        tl.to(subtextRef.current, { opacity: 1, duration: 0.1, ease: 'none' });
      }
-  }, []);
+  }, [text]);
 
   return (
     <div

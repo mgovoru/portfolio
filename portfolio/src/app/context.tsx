@@ -11,7 +11,6 @@ interface MyContextProviderProps {
   children: ReactNode;
 }
 
-// Создаём провайдер
 export const MyContextProvider: FC<MyContextProviderProps> = ({ children }) => {
   const [isLight, setIsLight] = useState<boolean>(true);
 

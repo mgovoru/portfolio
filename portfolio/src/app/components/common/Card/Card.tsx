@@ -20,29 +20,18 @@ export default function Card(props: dataProps) {
       item: HTMLDivElement,
       parent: HTMLDivElement
     ) => {
-      let dropShadowColor = 'rgba(0, 0, 0, 0.3)';
-      if (parent.getAttribute('data-filter-color') !== null) {
-        dropShadowColor = parent.getAttribute('data-filter-color')!;
-      }
 
       parent.classList.add('animated');
 
       const rect = item.getBoundingClientRect();
-      let x = Math.abs(rect.x - e.clientX);
-      let y = Math.abs(rect.y - e.clientY);
-      let halfWidth = rect.width / 2;
-      let halfHeight = rect.height / 2;
+      const x = Math.abs(rect.x - e.clientX);
+      const y = Math.abs(rect.y - e.clientY);
+      const halfWidth = rect.width / 2;
+      const halfHeight = rect.height / 2;
 
-      let calcAngleX = (x - halfWidth) / 6;
-      let calcAngleY = (y - halfHeight) / 14;
+      const calcAngleX = (x - halfWidth) / 6;
+      const calcAngleY = (y - halfHeight) / 14;
 
-      let gX = (1 - x / (halfWidth * 2)) * 100;
-      let gY = (1 - y / (halfHeight * 2)) * 100;
-
-      // const glare = item.querySelector('.glare') as HTMLDivElement;
-      // if (glare) {
-      //   glare.style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
-      // }
 
       parent.style.perspective = `${halfWidth * 6}px`;
       item.style.perspective = `${halfWidth * 6}px`;
@@ -60,10 +49,6 @@ export default function Card(props: dataProps) {
           'data-custom-perspective'
         )!;
       }
-
-      let calcShadowX = (x - halfWidth) / 3;
-      let calcShadowY = (y - halfHeight) / 6;
-      // item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
     },
     []
   );
@@ -91,7 +76,6 @@ export default function Card(props: dataProps) {
       card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
       backface.style.transform =
         'rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)';
-      // card.style.filter = `drop-shadow(0 10px 15px rgb(0, 0, 0, 0.3))`;
     }
   };
 
