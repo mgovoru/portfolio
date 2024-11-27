@@ -1,9 +1,7 @@
-@import "./../../global.scss";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "./../../mixin.scss";
 
 
 .common {
-	font-family: 'Montserrat';
 	width: 100%;
 	position: relative;
 	z-index: 100;
@@ -15,7 +13,6 @@
 }
 
 .white {
-	font-family: 'Montserrat';
 	background: white;
 	height: 75px;
 	border: 1px solid black;

@@ -100,7 +100,7 @@ export default function Card(props: dataProps) {
       </div>
       <div className='inner-card'>
         <div className='front-content'>
-          <a href={props.mainUrl} className='card__link'>
+          <a href={props.mainUrl} className='card__link' target='_blank'>
             <div
               className='front-image'
               style={{
