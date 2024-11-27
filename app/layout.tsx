@@ -8,7 +8,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useEffect} from 'react';
 import { register } from 'swiper/element/bundle';
-import { MyContextProvider } from '@/app/context';
+import { MyContextProvider } from './context';
 
 export default function RootLayout({
   children,
