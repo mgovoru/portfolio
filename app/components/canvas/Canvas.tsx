@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PuzzlePiece from './PuzzlePiece';
-import { PuzzlePieceProps } from './../../types';
-import { PieceShape } from './../../types';
+import { PuzzlePieceProps } from '../../types';
+import { PieceShape } from '../../types';
 import { gsap } from 'gsap';
 import styles from './canvas.module.scss';
 
@@ -245,7 +245,7 @@ const PuzzleCanvas: React.FC = () => {
       style={{
         position: 'relative',
         width: imageSize.width,
-        height: imageSize.height,
+        height: imageSize.height
       }}
     >
       {pieces.map((piece, index) => (

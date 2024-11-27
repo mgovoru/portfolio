@@ -1,5 +1,5 @@
 'use client';
-import { dataProps } from '@/app/types';
+import { dataProps } from './../../../types';
 import './Card.scss';
 import React, { useState, useCallback } from 'react';
 
@@ -20,7 +20,6 @@ export default function Card(props: dataProps) {
       item: HTMLDivElement,
       parent: HTMLDivElement
     ) => {
-
       parent.classList.add('animated');
 
       const rect = item.getBoundingClientRect();
@@ -31,7 +30,6 @@ export default function Card(props: dataProps) {
 
       const calcAngleX = (x - halfWidth) / 6;
       const calcAngleY = (y - halfHeight) / 14;
-
 
       parent.style.perspective = `${halfWidth * 6}px`;
       item.style.perspective = `${halfWidth * 6}px`;

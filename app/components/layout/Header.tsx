@@ -1,7 +1,7 @@
 'use client';
 import styles from './header.module.scss';
 import { useState } from 'react';
-import { MenuItem } from '@/app/types';
+import { MenuItem } from './../../types';
 import Link from 'next/link';
 import React from 'react';
 
