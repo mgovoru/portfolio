@@ -8,8 +8,8 @@ import React from 'react';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems: MenuItem[] = [
-    { id: 1, label: 'история', url: '/about' },
-    { id: 2, label: 'работы', url: '/works' },
+    { id: 1, label: 'история', url: './about' },
+    { id: 2, label: 'работы', url: './works' },
   ];
   const toggleMenu = () => {
     setIsOpen(!isOpen);
