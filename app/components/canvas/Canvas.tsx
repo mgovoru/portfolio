@@ -19,7 +19,7 @@ const PuzzleCanvas: React.FC = () => {
     const bufferCtx = bufferCanvas.getContext('2d') as CanvasRenderingContext2D;
 
     const img = new Image();
-    img.src = '/city.jpg'; // Замените на путь к вашему изображению или используйте URL
+    img.src = './city.jpg'; // Замените на путь к вашему изображению или используйте URL
     function getHeaderHeight() {
       const header = document.querySelector('header');
       return header ? header.clientHeight : 0;
