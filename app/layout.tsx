@@ -1,4 +1,5 @@
 'use client';
+import { Montserrat } from 'next/font/google';
 
 import './normalize.scss';
 import './null.scss';
@@ -10,6 +11,14 @@ import { useGSAP } from '@gsap/react';
 import { useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { MyContextProvider } from './context';
+
+
+const montserrat = Montserrat({
+  subsets: ['cyrillic'],
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
+});
+
 
 export default function RootLayout({
   children,
@@ -23,7 +32,7 @@ export default function RootLayout({
 
   return (
     <MyContextProvider>
-      <html lang='ru'>
+      <html lang='ru' className={montserrat.className}>
         <body>
           <Header />
           <main className='main'>{children}</main>

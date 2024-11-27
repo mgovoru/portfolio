@@ -1,6 +1,14 @@
 'use client';
 import { useRef } from 'react';
 import styles from './page.module.scss';
+import { DM_Sans } from 'next/font/google';
+
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
+});
 
 export default function About() {
   const outputRef = useRef(null);
@@ -10,7 +18,7 @@ export default function About() {
 
   return (
     <>
-      <div className='container'>
+      <div className={`${dmSans.className} container`}>
         <div className={styles.content}>
           <div
             className={styles.textabout}
