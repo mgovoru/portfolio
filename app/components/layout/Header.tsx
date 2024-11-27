@@ -8,7 +8,7 @@ import React from 'react';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems: MenuItem[] = [
-    { id: 1, label: 'история', url: './about' },
+    { id: 1, label: 'обо мне', url: './about' },
     { id: 2, label: 'работы', url: './works' },
   ];
   const toggleMenu = () => {
