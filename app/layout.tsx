@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <MyContextProvider>
-      <html lang='en'>
+      <html lang='ru'>
         <body>
           <Header />
           <main
