@@ -1,7 +1,13 @@
 @import "./../global.scss";
 
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
 .content {
-	height: 70%;
+	height: 65%;
 	display: flex;
 	justify-content: space-between;
 	font-family: 'Montserrat';
@@ -72,15 +78,16 @@
 	ul li {
 		margin-bottom: 16px;
 	}
-		 a {
-		 	text-decoration: none;
-		 	color: #007BFF;
-		 	transition: 0.3s;
-		 	display: inline-block;
-		 }
-	
-		 a:hover {
-			color: #0056b3;
-		 	box-shadow: 0 2px 0px rgba(0, 0, 0, 0.3);
-		 }
+
+	a {
+		text-decoration: none;
+		color: #007BFF;
+		transition: 0.3s;
+		display: inline-block;
+	}
+
+	a:hover {
+		color: #0056b3;
+		box-shadow: 0 2px 0px rgba(0, 0, 0, 0.3);
+	}
 }
