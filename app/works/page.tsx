@@ -45,29 +45,26 @@ export default function Works() {
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 16,
-              centeredSlides: true,
             },
             768: {
               slidesPerView: 2,
-              spaceBetween: 16,
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 16,
             },
             1440: {
               slidesPerView: 4,
-              spaceBetween: 16,
             },
           }}
-          style={{ width: '100%', height: '40rem', padding: '64px 32px' }}
+          style={{
+            width: '100%',
+            padding: '64px 24px',
+          }}
         >
           {data.map((el, index) => (
             <SwiperSlide
               key={index}
               style={{
-                width: '23rem',
                 height: '32rem',
                 display: 'flex',
                 justifyContent: 'center',
