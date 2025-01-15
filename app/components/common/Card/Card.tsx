@@ -77,6 +77,7 @@ export default function Card(props: dataProps) {
     }
   };
 
+
   return (
     <div
       className={`card blastoise ${isFlipped ? 'flipped' : ''}`}

@@ -12,6 +12,12 @@ import 'swiper/css/scrollbar';
 export default function Works() {
   const data = [
     {
+      mainUrl: 'https://garry-potter-app.vercel.app',
+      url: './code_4.jpg',
+      title: 'Harry Potter Heroes',
+      text: 'Веб-приложение, с помощью которого можно удобно взаимодействовать с информацией о любимых персонажах сказочной вселенной. Next.js, React и Redux. Typescript.',
+    },
+    {
       mainUrl: 'https://mgovoru.github.io/hangman/',
       url: './code_1.png',
       title: 'Hangman',
@@ -28,12 +34,6 @@ export default function Works() {
       url: './code_3.png',
       title: 'eCommerce-App',
       text: 'Репозиторий - веб-приложения,  обеспечивающего интеграцию и вывод данных согласно предоставленным бэкэнд-сервисам CommerceTools.  Typescript.',
-    },
-    {
-      mainUrl: 'https://github.com/mgovoru/create-course',
-      url: './code_4.png',
-      title: 'Stars web',
-      text: 'Репозиторий - веб-приложение, которое позволяет пользователям взаимодействовать с данными из вселенной «Звёздных войн». Next.js, React и Redux.  Typescript.',
     },
   ];
   return (

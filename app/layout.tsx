@@ -1,5 +1,5 @@
 'use client';
-import { Montserrat } from 'next/font/google';
+import { Noto_Serif_Display } from 'next/font/google';
 
 import './normalize.scss';
 import './null.scss';
@@ -12,13 +12,11 @@ import { useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { MyContextProvider } from './context';
 
-
-const montserrat = Montserrat({
+const montserrat = Noto_Serif_Display({
   subsets: ['cyrillic'],
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
+  weight: ['200', '300', '400'],
+  style: ['normal'],
 });
-
 
 export default function RootLayout({
   children,
