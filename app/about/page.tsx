@@ -1,14 +1,9 @@
 'use client';
 import { useRef } from 'react';
 import styles from './page.module.scss';
-import { DM_Sans } from 'next/font/google';
+import Image from 'next/image';
 
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
-});
 
 export default function About() {
   const outputRef = useRef(null);
@@ -17,8 +12,8 @@ export default function About() {
     'Я окончила математико-механический факультет Уральского государственного университета, но судьба увела меня по совсем другим дорогам. Не так давно меня пленил веб-дизайн — мир визуальных образов и эстетики интернета. Однако со временем я осознала, что истинное мое увлечение скрыто глубже: в механизмах, заставляющих гипертекст работать, в коде и логике, лежащих в основе современных веб-технологий.\nСтремясь разобраться во внутреннем устройстве веба, я завершила основной курс JS и курс по React в RSS School. Эти знания укрепили желание развиваться как разработчик. Теперь я посвящаю себя изучению тонкостей программирования, соединяя аналитический подход с творческим мышлением. Мой путь — это синтез точных наук и креативности, стремление понять суть и создавать не просто красивые, но и функциональные решения. Я верю, что сочетание моего образования и страсти к разработке позволит открыть новые возможности для роста';
 
   return (
-    <>
-      <div className={`${dmSans.className} container`}>
+    <div className={styles.about}>
+      <div className='container'>
         <div className={styles.content}>
           <div
             className={styles.textabout}
@@ -38,7 +33,14 @@ export default function About() {
             ))}
           </div>
           <div className={styles.photo}>
-            <img src='./photo.png' alt='' />
+            <Image
+              src='/photo.png'
+              alt='Responsive image'
+              layout='responsive'
+              width={16}
+              height={16}
+              // sizes='(max-width: 1100px) 220px, 250px'
+            />
           </div>
         </div>
         <div className={styles.contacts}>
@@ -71,6 +73,6 @@ export default function About() {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }

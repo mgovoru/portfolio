@@ -43,7 +43,6 @@
 
 .logo {
 	@include responsive-font(16, 37, 320, 1920);
-	font-weight: 700;
 	line-height: 41.58px;
 	letter-spacing: 0px;
 }
@@ -94,7 +93,6 @@
 }
 
 .item {
-	font-weight: 500;
 	@include responsive-font(16, 30, 320, 1920);
 	cursor: pointer;
 	position: relative;
