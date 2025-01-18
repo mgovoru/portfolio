@@ -1,9 +1,5 @@
 'use client';
-import { Noto_Serif_Display } from 'next/font/google';
-
-import './normalize.scss';
-import './null.scss';
-import './global.scss';
+import { Russo_One, Marck_Script } from 'next/font/google';
 import Header from './components/layout/Header';
 
 import { gsap } from 'gsap';
@@ -12,9 +8,17 @@ import { useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { MyContextProvider } from './context';
 
-const montserrat = Noto_Serif_Display({
+import './styles/globals.scss'
+  
+const russo_One = Russo_One({
   subsets: ['cyrillic'],
-  weight: ['200', '300', '400'],
+  weight: ['400'],
+  style: ['normal'],
+});
+
+const marck_Script = Marck_Script({
+  subsets: ['cyrillic'],
+  weight: ['400'],
   style: ['normal'],
 });
 
@@ -30,10 +34,15 @@ export default function RootLayout({
 
   return (
     <MyContextProvider>
-      <html lang='ru' className={montserrat.className}>
+      <html
+        lang='ru'
+        className={`${russo_One.className} ${marck_Script.className}`}
+      >
         <body>
-          <Header />
-          <main className='main'>{children}</main>
+          <div className='wrapper'>
+            <Header />
+            <main className='main'>{children}</main>
+          </div>
         </body>
       </html>
     </MyContextProvider>

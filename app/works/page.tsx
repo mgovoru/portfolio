@@ -58,7 +58,8 @@ export default function Works() {
           }}
           style={{
             width: '100%',
-            padding: '64px 24px',
+            height: '100%',
+            padding: '12px',
           }}
         >
           {data.map((el, index) => (

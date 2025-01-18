@@ -1,0 +1,13 @@
+
+@mixin responsive-font($minFontSize, $maxFontSize, $minWidth, $maxWidth) {
+	font-size: clamp(#{$minFontSize}px,
+		calc(#{$minFontSize * 1px} + (#{$maxFontSize} - #{$minFontSize}) * (100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})),
+		#{$maxFontSize}px);
+}
+@mixin background-clip-text {
+	background-clip: text;
+	-webkit-background-clip: text; // Для поддержки Webkit-браузеров
+	-moz-background-clip: text; // Для поддержки Firefox (опционально)
+	-o-background-clip: text; // Для поддержки Opera (опционально)
+	-ms-background-clip: text; // Для поддержки Internet Explorer (опционально)
+}

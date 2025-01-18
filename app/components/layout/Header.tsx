@@ -20,7 +20,7 @@ const Header = () => {
       <div className={styles.black}></div>
       <div className={styles.white}>
         <div className={styles.container}>
-          <div className={styles.logo}>
+          <div className={`${styles.logo} gradient`}>
             {' '}
             <Link href='/'>MGovorukhina</Link>
           </div>
@@ -31,7 +31,7 @@ const Header = () => {
             <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
               {menuItems.map((item) => (
                 <li key={item.id} className={styles.item}>
-                  <a href={item.url}>{item.label}</a>
+                  <a href={item.url} className='link'>{item.label}</a>
                 </li>
               ))}
             </ul>

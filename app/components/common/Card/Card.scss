@@ -11,6 +11,7 @@
 	transition: all 0.2s ease-out;
 	border: none;
 	letter-spacing: 1px;
+	color: $color-link;
 }
 
 .flip,
@@ -48,7 +49,6 @@
 	background: linear-gradient(45deg, #0b0b2a, #0b0b2a);
 	position: absolute;
 	top: 0;
-	color: white;
 	padding: 2rem;
 	box-sizing: border-box;
 	transition: all 0.15s ease-out;
@@ -117,7 +117,6 @@
 
 .card .inner-card {
 	font-size: 2rem;
-	color: white;
 	padding: 1rem 2rem;
 	line-height: 3rem;
 	will-change: transform, filter;
@@ -140,7 +139,6 @@
 }
 
 .title {
-	color: rgb(6, 6, 6);
 	font-size: 36px;
 	line-height: 47px;
 	letter-spacing: 0px;
@@ -150,7 +148,6 @@
 .card__text {
 	width: 250px;
 	height: 112px;
-	color: rgb(6, 6, 6);
 	font-size: 16px;
 	line-height: 21px;
 	letter-spacing: 0px;
