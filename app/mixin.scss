@@ -1,6 +1,0 @@
-
-@mixin responsive-font($minFontSize, $maxFontSize, $minWidth, $maxWidth) {
-	font-size: clamp(#{$minFontSize}px,
-		calc(#{$minFontSize * 1px} + (#{$maxFontSize} - #{$minFontSize}) * (100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})),
-		#{$maxFontSize}px);
-}

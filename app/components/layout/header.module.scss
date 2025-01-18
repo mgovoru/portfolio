@@ -1,28 +1,18 @@
-@import "./../../mixin.scss";
-
-
 .common {
 	width: 100%;
 	position: relative;
-	z-index: 100;
+	// z-index: 100;
 }
 
 .black {
-	background: black;
+	background: linear-gradient(45deg, #7C4001, #1D0F01);
 	height: 35px;
 }
 
 .white {
 	background: white;
-	height: 75px;
-	border: 1px solid black;
-}
-
-.blackAll {
-	background: black;
-	height: 75px;
-	border: 1px solid white;
-	color: white;
+	height: 100px;
+	border: 1px solid #7C4001;
 }
 
 .container {
@@ -60,6 +50,7 @@
 	position: relative;
 	right: 50%;
 	transform: translateX(50%);
+	font-family: "Marck Script", serif;
 }
 
 @media(max-width:700px) {
@@ -82,7 +73,6 @@
 		right: 0;
 		top: 105%;
 		transform: translateX(-50%);
-		background-color: rgb(234, 233, 233);
 		z-index: 100;
 	}
 
@@ -97,7 +87,6 @@
 	cursor: pointer;
 	position: relative;
 	transition: color 0.3s ease;
-
 }
 
 .item::before {

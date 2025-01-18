@@ -235,9 +235,9 @@ const PuzzleCanvas: React.FC = () => {
     spans.forEach((span) => {
       tl.to(span, { opacity: 1, duration: 0.1, ease: 'none' });
     });
-     if (subtextRef.current) {
-       tl.to(subtextRef.current, { opacity: 1, duration: 0.1, ease: 'none' });
-     }
+    if (subtextRef.current) {
+      tl.to(subtextRef.current, { opacity: 1, duration: 0.1, ease: 'none' });
+    }
   }, [text]);
 
   return (
@@ -245,7 +245,7 @@ const PuzzleCanvas: React.FC = () => {
       style={{
         position: 'relative',
         width: imageSize.width,
-        height: imageSize.height
+        height: imageSize.height,
       }}
     >
       {pieces.map((piece, index) => (
@@ -258,9 +258,11 @@ const PuzzleCanvas: React.FC = () => {
           height={piece.height}
         />
       ))}
-      <div ref={textRef} className={styles.title} />
-      <div ref={subtextRef} className={styles.subtitle}>
-        Мария Говорухина
+      <div className={styles.text}>
+        <div ref={textRef} className={`${styles.title} gradient`} />
+        <div ref={subtextRef} className={`${styles.subtitle} gradient`}>
+          Мария Говорухина
+        </div>
       </div>
     </div>
   );
