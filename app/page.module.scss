@@ -7,7 +7,6 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-attachment: fixed;
 	font-weight: 400;
 	@include responsive-font(18, 24, 375, 1920);
 	color: $text-color-light;
