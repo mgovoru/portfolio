@@ -51,7 +51,7 @@
 	right: 50%;
 	transform: translateX(50%);
 	font-family: "Marck Script", serif;
-	background-color: $text-color-light;
+
 }
 
 @media(max-width:700px) {
@@ -75,6 +75,7 @@
 		top: 105%;
 		transform: translateX(-50%);
 		z-index: 100;
+		background-color: $text-color-light;
 	}
 
 	.menu.open {
