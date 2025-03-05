@@ -20,15 +20,19 @@ const PuzzleCanvas: React.FC = () => {
 
     const img = new Image();
     img.src = './city.jpeg'; // Замените на путь к вашему изображению или используйте URL
-    function getHeaderHeight() {
+    function getDrawerHeight() {
       const header = document.querySelector('header');
       return header ? header.clientHeight : 0;
     }
-
+    function getDrawerWidth() {
+      const drawer = document.querySelector('.MuiDrawer-root');
+      return drawer ? drawer.clientWidth : 0;
+    }
     img.onload = function () {
-      const headerHeight = getHeaderHeight(); // Функция, возвращающая высоту заголовка
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight - headerHeight;
+      const drawerWidth = getDrawerWidth();
+      const drawerHeight = getDrawerHeight(); // Функция, возвращающая высоту заголовка
+      const screenWidth = window.innerWidth - drawerWidth;
+      const screenHeight = window.innerHeight - drawerHeight;
 
       // Масштабируем изображение, чтобы оно соответствовало размерам экрана
       bufferCanvas.width = screenWidth;

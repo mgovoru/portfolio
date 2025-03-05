@@ -37,11 +37,12 @@ export default function RootLayout({
       <html
         lang='ru'
         className={`${russo_One.className} ${marck_Script.className}`}
+        data-toolpad-color-scheme='light'
       >
         <body>
           <div className='wrapper'>
-            <Header />
-            <main className='main'>{children}</main>
+            {/*<Header />*/}
+            <main className='main'> {children}</main>
           </div>
         </body>
       </html>

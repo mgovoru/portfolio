@@ -31,11 +31,7 @@
 	}
 }
 
-.logo {
-	@include responsive-font(16, 37, 320, 1920);
-	line-height: 41.58px;
-	letter-spacing: 0px;
-}
+
 
 .burger {
 	display: none;
