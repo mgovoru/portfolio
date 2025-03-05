@@ -4,24 +4,24 @@ import Canvas from './components/canvas/Canvas';
 
 import * as React from 'react';
 import { createTheme } from '@mui/material/styles';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { AppProvider, type Navigation } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
 import { Stack, Typography } from '@mui/material';
 import Image from 'next/image';
+import About from './about/page';
+import Works from './works/page';
 
 const NAVIGATION: Navigation = [
   {
-    segment: '/about',
+    segment: 'about',
     title: 'обо мне',
-    icon: <DashboardIcon />,
+    icon: <Image src='./hogwarts.svg' alt='hogwarts' width={32} height={32} />,
   },
   {
-    segment: '/works',
+    segment: 'works',
     title: 'работы',
-    icon: <ShoppingCartIcon />,
+    icon: <Image src='./golden.svg' alt='hogwarts' width={32} height={32} />,
   },
 ];
 
@@ -42,33 +42,21 @@ const demoTheme = createTheme({
 });
 
 function DemoPageContent({ pathname }: { pathname: string }) {
-  return (
-    // <Box
-    //   sx={{
-    //     py: 4,
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     alignItems: 'center',
-    //     textAlign: 'center',
-    //   }}
-    // >
-    //   <Typography>Dashboard content for {pathname}</Typography>
-    // </Box>
+  let content;
 
-    <div className='container'>
-      <Canvas />
-    </div>
-  );
+  if (pathname === '/about') {
+    content = <About />;
+  } else if (pathname === '/works') {
+    content = <Works />;
+  } else if (pathname === '/canvas') {
+    content = <Canvas />;
+  }
+  return <div className='container'>{content}</div>;
 }
 function CustomAppTitle() {
   return (
     <Stack direction='row' alignItems='center' spacing={2}>
-      <Image
-        src='/to-do__app/logo.png'
-        alt='ToDo logo'
-        width='40'
-        height='40'
-      />
+      <Image src='/express.svg' alt='ToDo logo' width='40' height='40' />
       <Typography variant='h4' sx={{ '& > *': { fontFamily: 'Russo One' } }}>
         <span className='gradient logo'>MGovorukhina</span>
       </Typography>
@@ -76,37 +64,27 @@ function CustomAppTitle() {
   );
 }
 export default function DashboardLayoutBranding() {
-  const router = useDemoRouter('/');
+  const router = useDemoRouter('/canvas');
 
   return (
-    <AppProvider
-      navigation={NAVIGATION}
-      branding={{
-        logo: <img src='https://mui.com/static/logo.png' alt='MUI logo' />,
-        title: 'MGovorukhina',
-      }}
-      router={router}
-      theme={demoTheme}
-    >
+    <AppProvider navigation={NAVIGATION} router={router} theme={demoTheme}>
       <DashboardLayout
         slots={{
           appTitle: CustomAppTitle,
         }}
         sx={{
-          '.MuiPaper-root': { backgroundColor: '#F1E7D2' },
+          // '.MuiPaper-root': { backgroundColor: '#F1E7D2' },
+          '.MuiSvgIcon-root': {
+            color: 'rgb(234,191,34) !important',
+          },
+          '.MuiTypography-root': {
+            fontFamily: 'Marck Script',
+            fontSize: '24px',
+          },
         }}
       >
         <DemoPageContent pathname={router.pathname} />
       </DashboardLayout>
     </AppProvider>
-    // preview-end
   );
 }
-
-// export default function Home() {
-//   return (
-//     <>
-//       <Canvas />
-//     </>
-//   );
-// }
