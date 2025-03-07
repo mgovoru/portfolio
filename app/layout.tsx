@@ -1,15 +1,15 @@
 'use client';
 import { Russo_One, Marck_Script } from 'next/font/google';
-import Header from './components/layout/Header';
-
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { MyContextProvider } from './context';
 
-import './styles/globals.scss'
-  
+import './styles/normalize.scss';
+import './styles/null.scss';
+import './styles/global.scss';
+
 const russo_One = Russo_One({
   subsets: ['cyrillic'],
   weight: ['400'],
@@ -37,11 +37,11 @@ export default function RootLayout({
       <html
         lang='ru'
         className={`${russo_One.className} ${marck_Script.className}`}
+        data-toolpad-color-scheme='light'
       >
         <body>
           <div className='wrapper'>
-            <Header />
-            <main className='main'>{children}</main>
+            <main className='main'> {children}</main>
           </div>
         </body>
       </html>

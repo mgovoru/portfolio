@@ -17,8 +17,7 @@ export default function About() {
    setIsModalOpen(!isModalOpen);
  };
   return (
-    <div className={styles.about}>
-      <div className='container'>
+    <>
         <div className={styles.content}>
           <div
             className={styles.textabout}
@@ -108,7 +107,6 @@ export default function About() {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+    </>
   );
 }
