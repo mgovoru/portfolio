@@ -12,6 +12,9 @@ html {
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 }
 
 /* Remove default margin in favour of better control in authored CSS */

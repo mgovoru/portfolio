@@ -4,7 +4,7 @@ import path from "path";
 const nextConfig: NextConfig = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'app/styles')],
-		prependData: `@use "global" as *;`,
+		additionalData: `@use "main" as *;`,
 	},
 };
 
