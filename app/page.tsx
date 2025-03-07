@@ -33,8 +33,8 @@ const demoTheme = createTheme({
     light: {
       palette: {
         background: {
-          default: '#F1E7D2', 
-          paper: '#F1E7D2', 
+          default: '#F1E7D2',
+          paper: '#F1E7D2',
         },
       },
     },
@@ -51,7 +51,7 @@ const demoTheme = createTheme({
     values: {
       xs: 0,
       sm: 600,
-      md: 600,
+      md: 900,
       lg: 1200,
       xl: 1536,
     },
