@@ -3,7 +3,11 @@
 	@include background-clip-text;
 	-webkit-text-fill-color: transparent;
 }
-
+.gradientTitle {
+	background: $second-color;
+	@include background-clip-text;
+	-webkit-text-fill-color: transparent;
+}
 .wrapper {
 	background-color: $background-color;
 	color: $text-color-dark;

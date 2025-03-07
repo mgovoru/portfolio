@@ -43,8 +43,10 @@ export default function Works() {
 
   useEffect(() => {
     const resizeScreen = () => {
-      (swiperRef.current as unknown as HTMLElement).style.height =
-        `${window.innerHeight - getDrawerHeight()}px`;
+      if (swiperRef && swiperRef.current) {
+        (swiperRef.current as HTMLElement).style.height =
+          `${window.innerHeight - getDrawerHeight()}px`;
+      }
     };
     resizeScreen();
 
@@ -56,6 +58,10 @@ export default function Works() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        background: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('./non.jpg')`,
+        backgroundSize: `cover`,
+        backgroundRepeat: `no-repeat`,
+        backgroundPosition: `center center`,
       }}
       ref={swiperRef}
     >

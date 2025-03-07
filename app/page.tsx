@@ -1,7 +1,6 @@
 'use client';
 
 import Canvas from './components/canvas/Canvas';
-
 import * as React from 'react';
 import { createTheme } from '@mui/material/styles';
 import { AppProvider, type Navigation } from '@toolpad/core/AppProvider';
@@ -11,6 +10,7 @@ import { Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import About from './about/page';
 import Works from './works/page';
+import Link from '@mui/material/Link';
 
 const NAVIGATION: Navigation = [
   {
@@ -29,7 +29,24 @@ const demoTheme = createTheme({
   cssVariables: {
     colorSchemeSelector: 'data-toolpad-color-scheme',
   },
-  colorSchemes: { light: true, dark: true },
+  colorSchemes: {
+    light: {
+      palette: {
+        background: {
+          default: '#F1E7D2', 
+          paper: '#F1E7D2', 
+        },
+      },
+    },
+    dark: {
+      palette: {
+        background: {
+          default: '#7C4001',
+          paper: '#7C4001',
+        },
+      },
+    },
+  },
   breakpoints: {
     values: {
       xs: 0,
@@ -57,7 +74,15 @@ function CustomAppTitle() {
   return (
     <Stack direction='row' alignItems='center' spacing={2}>
       <Image src='/express.svg' alt='ToDo logo' width='40' height='40' />
-      <Typography variant='h4' sx={{ '& > *': { fontFamily: 'Russo One' } }}>
+      <Typography
+        variant='h4'
+        sx={{
+          '& > *': { fontFamily: 'Russo One' },
+          textDecoration: 'none',
+        }}
+        component={Link}
+        href='/'
+      >
         <span className='gradient logo'>MGovorukhina</span>
       </Typography>
     </Stack>
@@ -73,7 +98,6 @@ export default function DashboardLayoutBranding() {
           appTitle: CustomAppTitle,
         }}
         sx={{
-          // '.MuiPaper-root': { backgroundColor: '#F1E7D2' },
           '.MuiSvgIcon-root': {
             color: 'rgb(234,191,34) !important',
           },
