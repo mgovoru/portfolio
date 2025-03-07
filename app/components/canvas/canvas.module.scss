@@ -6,7 +6,7 @@
 }
 
 .title {
-	@include responsive-font(24, 72, 320, 1920);
+	@include responsive-font(24, 56, 320, 1920);
 	line-height: 56px;
 	letter-spacing: 10px;
 	font-weight: 400;
@@ -14,7 +14,7 @@
 }
 
 .subtitle {
-	@include responsive-font(16, 36, 320, 1920);
+	@include responsive-font(16, 24, 320, 1920);
 	line-height: 56px;
 	letter-spacing: 10px;
 	opacity: 0;
