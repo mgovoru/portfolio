@@ -84,22 +84,23 @@
 
 	@media screen and (max-width: 768px) {
 		width: 95%;
-		max-height: 95%;
+		max-height: 80%;
 	}
 }
-	.modalContent {
-		background: #fff;
-		padding: 22px;
-		border-radius: 8px;
-		text-align: center;
-	}
 
-	.closeButton {
-		margin-top: 10px;
-		border: none;
-		cursor: pointer;
-	}
+.modalContent {
+	background: #fff;
+	padding: 22px;
+	border-radius: 8px;
+	text-align: center;
+}
 
-	.contactLink {
-		color: $color-link;
-	}
+.closeButton {
+	margin-top: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+.contactLink {
+	color: $color-link;
+}
