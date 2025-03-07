@@ -29,7 +29,6 @@ const PuzzleCanvas: React.FC = () => {
     img.src = './city.jpg';
     
     const handleResize = () => {
-      console.log(window.innerWidth, window.innerHeight);
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
